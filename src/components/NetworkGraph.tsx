@@ -11,6 +11,7 @@ export function NetworkGraph({ data, onNodeClick }: { data: RepoData, onNodeClic
   const [dimensions, setDimensions] = useState({ width: 800, height: 600 });
   const [is3D, setIs3D] = useState(true);
   const [isReady, setIsReady] = useState(false);
+  const [hoverNode, setHoverNode] = useState<any>(null);
 
   useEffect(() => {
     setIsReady(false);
@@ -236,9 +237,51 @@ export function NetworkGraph({ data, onNodeClick }: { data: RepoData, onNodeClic
               }}
               nodeRelSize={6}
               onNodeClick={onNodeClick}
+              onNodeHover={setHoverNode}
               linkDirectionalParticles={link => link.type === 'parent-commit' ? 2 : 0}
               linkDirectionalParticleSpeed={0.005}
               backgroundColor="#030305"
+              nodeCanvasObjectMode={() => 'after'}
+              nodeCanvasObject={(node: any, ctx, globalScale) => {
+                if (node !== hoverNode) return;
+                
+                const label = node.name;
+                const fontSize = 14/globalScale;
+                ctx.font = `bold ${fontSize}px Sans-Serif`;
+                const textWidth = ctx.measureText(label).width;
+                const bckgDimensions = [textWidth, fontSize].map(n => n + fontSize * 0.4);
+
+                // Draw background
+                ctx.fillStyle = 'rgba(3, 3, 5, 0.9)';
+                ctx.beginPath();
+                const x = node.x - bckgDimensions[0] / 2;
+                const y = node.y - bckgDimensions[1] / 2 + 15;
+                const w = bckgDimensions[0];
+                const h = bckgDimensions[1];
+                const r = 4 / globalScale;
+                ctx.moveTo(x + r, y);
+                ctx.lineTo(x + w - r, y);
+                ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+                ctx.lineTo(x + w, y + h - r);
+                ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+                ctx.lineTo(x + r, y + h);
+                ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+                ctx.lineTo(x, y + r);
+                ctx.quadraticCurveTo(x, y, x + r, y);
+                ctx.closePath();
+                ctx.fill();
+                
+                // Draw border
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+                ctx.lineWidth = 1 / globalScale;
+                ctx.stroke();
+
+                // Draw text
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillStyle = node.group === 'author' ? '#22d3ee' : (node.group === 'branch' ? '#a855f7' : '#ffffff');
+                ctx.fillText(label, node.x, node.y + 15);
+              }}
             />
           )}
         </div>
