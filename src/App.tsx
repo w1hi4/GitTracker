@@ -96,7 +96,7 @@ export default function App() {
                 <GitMerge className="w-5 h-5 text-[#030305]" />
               </div>
               <span className="text-xl font-bold tracking-tight text-white text-glow">
-                GitTracker Pro
+                GitTracker
               </span>
             </div>
             <div className="flex items-center gap-2">
@@ -163,7 +163,7 @@ export default function App() {
                       className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/50 font-mono text-sm transition-all"
                     />
                     <p className="text-xs text-gray-400 mt-2 leading-relaxed">
-                      GitHub limits unauthenticated requests to 60 per hour. Because GitTracker Pro fetches a lot of data at once, you might hit this limit quickly. Add a token to increase this limit to 5,000 per hour. Your token is stored locally in your browser.
+                      GitHub limits unauthenticated requests to 60 per hour. Because GitTracker fetches a lot of data at once, you might hit this limit quickly. Add a token to increase this limit to 5,000 per hour. Your token is stored locally in your browser.
                     </p>
                   </div>
                   
@@ -220,10 +220,10 @@ export default function App() {
                 <div className="space-y-6 relative z-10 overflow-y-auto custom-scrollbar pr-2 pb-4">
                   <section>
                     <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                      <Search className="w-4 h-4 text-emerald-400" /> What is GitTracker Pro?
+                      <Search className="w-4 h-4 text-emerald-400" /> What is GitTracker?
                     </h3>
                     <p className="text-sm text-gray-300 leading-relaxed">
-                      GitTracker Pro is a fast, real-time dashboard for analyzing GitHub and GitLab repositories. It fetches commits, contributors, branches, and file changes in parallel to give you instant insights into any public codebase.
+                      GitTracker is a fast, real-time dashboard for analyzing GitHub and GitLab repositories. It fetches commits, contributors, branches, and file changes in parallel to give you instant insights into any public codebase.
                     </p>
                   </section>
 
@@ -232,7 +232,7 @@ export default function App() {
                       <Key className="w-4 h-4 text-emerald-400" /> How to Fix Rate Limits (Get a Token)
                     </h3>
                     <p className="text-sm text-gray-300 mb-4 leading-relaxed">
-                      GitHub limits anonymous API requests to <strong>60 per hour</strong>. Because GitTracker Pro fetches a lot of data at once, you might hit this limit quickly. Adding a free Personal Access Token increases your limit to <strong>5,000 per hour</strong>.
+                      GitHub limits anonymous API requests to <strong>60 per hour</strong>. Because GitTracker fetches a lot of data at once, you might hit this limit quickly. Adding a free Personal Access Token increases your limit to <strong>5,000 per hour</strong>.
                     </p>
                     
                     <div className="space-y-3">
@@ -243,11 +243,11 @@ export default function App() {
                         <li>Scroll down to the bottom left and click <strong>Developer settings</strong>.</li>
                         <li>Click <strong>Personal access tokens</strong>, then select <strong>Tokens (classic)</strong>.</li>
                         <li>Click the <strong>Generate new token</strong> dropdown and select <strong>Generate new token (classic)</strong>.</li>
-                        <li>Give it a Note (e.g., "GitTracker Pro App").</li>
+                        <li>Give it a Note (e.g., "GitTracker App").</li>
                         <li><strong>Important:</strong> You do <em>not</em> need to check any scope boxes for public repositories. Leave them all blank.</li>
                         <li>Scroll to the bottom and click <strong>Generate token</strong>.</li>
                         <li>Copy the generated token (it starts with <code className="bg-black/30 px-1.5 py-0.5 rounded text-emerald-300">ghp_...</code>).</li>
-                        <li>Open the <strong>Settings</strong> menu in GitTracker Pro (top right gear icon), paste the token, and click Save.</li>
+                        <li>Open the <strong>Settings</strong> menu in GitTracker (top right gear icon), paste the token, and click Save.</li>
                       </ol>
                     </div>
                   </section>
@@ -266,7 +266,7 @@ export default function App() {
                   </section>
                   <section className="pt-4 border-t border-white/5">
                     <p className="text-xs text-gray-500 italic">
-                      GitTracker Pro is an advanced repository analytics tool designed for developers and project managers.
+                      GitTracker is an advanced repository analytics tool designed for developers and project managers.
                     </p>
                   </section>
                 </div>
