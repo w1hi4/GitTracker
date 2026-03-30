@@ -239,22 +239,6 @@ export function NetworkGraph({ data, onNodeClick }: { data: RepoData, onNodeClic
               linkDirectionalParticles={link => link.type === 'parent-commit' ? 2 : 0}
               linkDirectionalParticleSpeed={0.005}
               backgroundColor="#030305"
-              nodeCanvasObjectMode={() => 'after'}
-              nodeCanvasObject={(node: any, ctx, globalScale) => {
-                const label = node.name;
-                const fontSize = 12/globalScale;
-                ctx.font = `${fontSize}px Sans-Serif`;
-                const textWidth = ctx.measureText(label).width;
-                const bckgDimensions = [textWidth, fontSize].map(n => n + fontSize * 0.2);
-
-                ctx.fillStyle = 'rgba(3, 3, 5, 0.7)';
-                ctx.fillRect(node.x - bckgDimensions[0] / 2, node.y - bckgDimensions[1] / 2 + 12, bckgDimensions[0], bckgDimensions[1]);
-
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'middle';
-                ctx.fillStyle = node.group === 'author' ? '#22d3ee' : (node.group === 'branch' ? '#a855f7' : '#ffffff');
-                ctx.fillText(label, node.x, node.y + 12);
-              }}
             />
           )}
         </div>
