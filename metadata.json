@@ -1,0 +1,5 @@
+{
+  "name": "GitTracker Pro",
+  "description": "An open-source dashboard to track GitHub and GitLab repositories, showing commits, contributors, and project history.",
+  "requestFramePermissions": []
+}
