@@ -134,7 +134,7 @@ export function Dashboard({ data, onRefresh, refreshing }: DashboardProps) {
             Activity Matrix
           </h2>
           <div className="h-[350px] w-full relative z-10">
-            <ResponsiveContainer width="100%" height="100%">
+            <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
               <BarChart data={commitsOverTime}>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
                 <XAxis 
