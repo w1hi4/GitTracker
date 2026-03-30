@@ -1,14 +1,8 @@
 {
-  "name": "gittracker-cli",
-  "description": "Visualize your local and remote git repositories instantly.",
-  "author": "samaniwahiduddin6470",
-  "license": "MIT",
-  "private": false,
-  "version": "1.0.0",
+  "name": "react-example",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
-  "bin": {
-    "gittracker": "./cli.js"
-  },
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "vite build",
@@ -19,6 +13,7 @@
   "dependencies": {
     "@google/genai": "^1.29.0",
     "@tailwindcss/vite": "^4.1.14",
+    "@types/three": "^0.183.1",
     "@vitejs/plugin-react": "^5.0.4",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
@@ -30,8 +25,10 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-force-graph-2d": "^1.29.1",
+    "react-force-graph-3d": "^1.29.1",
     "recharts": "^3.8.1",
     "tailwind-merge": "^3.5.0",
+    "three": "^0.183.2",
     "vite": "^6.2.0"
   },
   "devDependencies": {
