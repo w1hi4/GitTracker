@@ -89,16 +89,19 @@ export default function App() {
       {/* Content */}
       <div className="relative z-10 h-screen overflow-y-auto custom-scrollbar flex flex-col">
         {/* Top Navigation */}
-        <nav className="sticky top-0 z-50 glass-panel border-x-0 border-t-0 rounded-none">
+        <nav className="sticky top-0 z-50 bg-[#030305]/80 backdrop-blur-xl border-b border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-400 to-cyan-500 flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.5)]">
+            <button 
+              onClick={() => window.location.reload()}
+              className="flex items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer group"
+            >
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-400 to-cyan-500 flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.3)] group-hover:shadow-[0_0_20px_rgba(16,185,129,0.5)] transition-all">
                 <GitMerge className="w-5 h-5 text-[#030305]" />
               </div>
               <span className="text-xl font-bold tracking-tight text-white text-glow">
                 GitTracker
               </span>
-            </div>
+            </button>
             <div className="flex items-center gap-2">
               <button 
                 onClick={() => setShowDocs(true)}
